@@ -31,7 +31,6 @@ class DialogEnderecoUsuarioWidget extends StatefulWidget {
 class _DialogEnderecoUsuarioWidgetState
     extends State<DialogEnderecoUsuarioWidget> {
   late DialogEnderecoUsuarioModel _model;
-  bool _searchingCep = false;
 
   @override
   void setState(VoidCallback callback) {
@@ -142,13 +141,7 @@ class _DialogEnderecoUsuarioWidgetState
                           child: TextFormField(
                             controller: _model.textFieldCepController,
                             focusNode: _model.textFieldCepFocusNode,
-                            enabled: !_searchingCep,
-                            onChanged: (value) {
-                              if(value.length == 9){
-                                setState(() {
-                                  _searchingCep = true;
-                                });
-                                EasyDebounce.debounce(
+                            onChanged: (_) => EasyDebounce.debounce(
                               '_model.textFieldCepController',
                               Duration(milliseconds: 2000),
                               () async {
@@ -188,13 +181,9 @@ class _DialogEnderecoUsuarioWidgetState
                                   });
                                 }
 
-                                setState(() {
-                                  _searchingCep = false;
-                                });
+                                setState(() {});
                               },
-                            );
-                              }
-                            },
+                            ),
                             autofocus: true,
                             textInputAction: TextInputAction.next,
                             obscureText: false,
