@@ -2,7 +2,6 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/components/dialog_endereco_usuario/dialog_endereco_usuario_widget.dart';
-import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -541,45 +540,6 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                           ),
                                         ),
                                       ],
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 16.0, 0.0, 0.0),
-                                      child: Container(
-                                        width: 300.0,
-                                        height: 100.0,
-                                        child: FlutterFlowBarChart(
-                                          barData: [
-                                            FFBarChartData(
-                                              yData: containerPedidoRecordList
-                                                  .map((d) => d.timeCreated)
-                                                  .toList(),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                            )
-                                          ],
-                                          xLabels: containerPedidoRecordList
-                                              .map((d) => d.status)
-                                              .toList(),
-                                          barWidth: 16.0,
-                                          barBorderRadius:
-                                              BorderRadius.circular(8.0),
-                                          groupSpace: 8.0,
-                                          chartStylingInfo: ChartStylingInfo(
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            showBorder: false,
-                                          ),
-                                          axisBounds: AxisBounds(),
-                                          xAxisLabelInfo: AxisLabelInfo(),
-                                          yAxisLabelInfo: AxisLabelInfo(),
-                                        ),
-                                      ),
                                     ),
                                   ),
                                 ],
